@@ -4,31 +4,36 @@ import '../../asset/css/custom.css';
 import '../../asset/css/bootstrap.min.css';
 import whiteLogo from '../../asset/images/white.jpg';
 import blueLogo from '../../asset/images/blue.png';
+import {NavLink} from 'react-router-dom';
 class TopNavigation extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            navBarTitle:"navBarTitle",
+            navTitle:"navTitle",
             navBarLogo: [whiteLogo],
             navBackground: 'navBackground',
-            navBarItem: 'navItem'
+            navBarItem: 'navItem',
+            navVariant: "dark",
+            mainTitle: props.title
         }
     }
     onScroll=()=>{
         if (window.scrollY>100) {
             this.setState({
-                navBarTitle:'navTitleScroll', 
+                navTitle:'navTitleScroll', 
                 navBarLogo:[blueLogo], 
                 navBackground: 'navBackgroundScroll',
-                navBarItem: 'navItemScroll'
+                navBarItem: 'navItemScroll',
+                navVariant: "light",
             })
         }
         else if (window.scrollY<100){
             this.setState({
-                navBarTitle: 'navBarTitle', 
+                navTitle: 'navTitle', 
                 navBarLogo:[whiteLogo],
                 navBackground: 'navBackground',
-                navBarItem:'navItem'
+                navBarItem:'navItem',
+                navVariant: "dark",
             })
         }
     }
@@ -38,22 +43,22 @@ class TopNavigation extends Component {
     render() {
         return (
             <Fragment>
-                <Navbar fixed="top" collapseOnSelect expand="lg" className={this.state.navBackground} variant="dark">
+                <title>{this.state.mainTitle}</title>
+                <Navbar fixed="top" collapseOnSelect expand="lg" className={this.state.navBackground} variant={this.state.navVariant}>
                     <Container>
-                        <Navbar.Brand href="#home" className={this.state.navBarTitle}><img className="navLogo" src={this.state.navBarLogo} alt='Rahidul Islam' /> Rahidul Islam</Navbar.Brand>
+                        <Navbar.Brand ><NavLink className={this.state.navTitle} to="/"><img className="navLogo" src={this.state.navBarLogo} alt='Rahidul Islam' /> RAHIDUL ISLAM</NavLink></Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
 
                             </Nav>
                             <Nav>
-                                <Nav.Link className={this.state.navBarItem} href="#deets">HOME</Nav.Link>
-                                <Nav.Link className={this.state.navBarItem} href="#deets">SERVICES</Nav.Link>
-                                <Nav.Link className={this.state.navBarItem} href="#deets">COURSES</Nav.Link>
-                                <Nav.Link className={this.state.navBarItem} href="#deets">PORTFOLIO</Nav.Link>
-                                <Nav.Link className={this.state.navBarItem} href="#deets">CONTACT</Nav.Link>
-                                <Nav.Link className={this.state.navBarItem} href="#deets">ABOUT</Nav.Link>
-
+                                <Nav.Link><NavLink end style={({isActive}) => ({color: isActive ? '#00a8ee' : '#ffffff'})} className={this.state.navBarItem} to="/">HOME</NavLink></Nav.Link>
+                                <Nav.Link><NavLink end style={({isActive}) => ({color: isActive ? '#00a8ee' : '#ffffff'})} className={this.state.navBarItem} to="/service">SERVICES</NavLink></Nav.Link>
+                                <Nav.Link><NavLink end style={({isActive}) => ({color: isActive ? '#00a8ee' : '#ffffff'})} className={this.state.navBarItem} to="/course">COURSES</NavLink></Nav.Link>
+                                <Nav.Link><NavLink end style={({isActive}) => ({color: isActive ? '#00a8ee' : '#ffffff'})} className={this.state.navBarItem} to="/portfolio">PORTFOLIO</NavLink></Nav.Link>
+                                <Nav.Link><NavLink end style={({isActive}) => ({color: isActive ? '#00a8ee' : '#ffffff'})} className={this.state.navBarItem} to="/contact">CONTACT</NavLink></Nav.Link>
+                                <Nav.Link><NavLink end style={({isActive}) => ({color: isActive ? '#00a8ee' : '#ffffff'})} className={this.state.navBarItem} to="/about">ABOUT</NavLink></Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

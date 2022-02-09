@@ -1,8 +1,24 @@
 import React, {Component, Fragment} from 'react';
 import {Button, Col, Container, Row} from "react-bootstrap";
-
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
 
 class TopBanner extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            title: '',
+            subTitle: ''
+        }
+    }
+    
+    componentDidMount(){
+        RestClient.getRequest(AppUrl.Home).then(result=>{
+            this.setState({title: result[0]['title'], subTitle: result[0]['subtitle']})
+        }).catch(error=>{
+            this.setState({title:'???', subTitle:'???'})
+        })
+    }
     render() {
         return (
             <Fragment>
@@ -11,8 +27,8 @@ class TopBanner extends Component {
                         <Container className="topContent">
                             <Row>
                                 <Col className="text-center">
-                                    <h1 className="topTitle">Software Engineer</h1>
-                                    <h4 className="topSubTile">Mobile & Web Application</h4>
+                                    <h1 className="topTitle">{this.state.title}</h1>
+                                    <h4 className="topSubTile">{this.state.subTitle}</h4>
                                     <Button variant="primary">More Info</Button>
                                 </Col>
                             </Row>

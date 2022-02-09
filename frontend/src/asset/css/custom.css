@@ -30,6 +30,7 @@
     font-size: 22px;
     color: #ffffff;
 }
+/*Service Section*/
 .serviceCard{
     margin: 5px 5px 5px 5px;
     height: 22rem;
@@ -62,7 +63,7 @@
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
     font-weight: 400;
-    color: #7e7e7e;
+    color: #242424;
 }
 
 /*Navigation Bar*/
@@ -71,12 +72,20 @@
     font-weight: 700;
     font-size: 24px;
     color: #ffffff !important;
+    text-decoration: none !important;
+}
+.navTitle:hover{
+    text-decoration: none !important;
 }
 .navTitleScroll{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 24px;
     color: #0073e6 !important;
+    text-decoration: none !important;
+}
+.navTitleScroll:hover{
+    text-decoration: none !important;
 }
 .navLogo{
     width: 50x;
@@ -90,6 +99,7 @@
     -webkit-transition: background-color 400ms linear;
 }
 .navBackgroundScroll{
+    box-shadow: 0 0 6px 0 rgba(0,115,230,0.3);
     background-color: #ffffff !important;
     transition: background-color 400ms linear;
     -o-transition: background-color 400ms linear;
@@ -101,7 +111,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    color: #ffffff !important;
+    color: #ffffff;
 }
 .navItemScroll{
     text-decoration: none !important;
@@ -178,4 +188,180 @@
     margin-top: 14%;
     padding: 10px;
     border-radius: 2px;
+}
+/*Recent Projects*/
+.projectCard{
+    border: none !important;
+    border-radius: 2px;
+    margin: 2px;
+    box-shadow: 0 0 4px 0 rgba(0,115,230,0.2);
+}
+.projectCard:hover{
+    box-shadow: 0 0 8px 0 rgba(0,115,230,0.2);
+}
+.projectCardTitle{
+    font-family: 'Montserrat', sans-serif;
+    font-family: 18px;
+    font-weight: 600;
+}
+.projectCardDes{
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 14px;
+}
+/* Courses*/
+.courseImg{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.courseTitle{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: justify;
+}
+.courseDes{
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: justify;
+}
+.courseDetails{
+    text-decoration: none;
+    color: #0073e6;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+.courseDetails:hover{
+    text-decoration: none;
+}
+.pageContentCourse{
+    margin-top: 6rem;
+}
+.courseFullTitle{
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+}
+.courseSubTitle{
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+}
+.videoCard{
+    padding: 6rem 3rem;
+    margin: 50px auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 4px 0 rgba(0,115,230,0.2);
+}
+.videoTitle{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #0073e6;
+}
+.videoDes{
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+.playBtn{
+    color: #0073e6;
+    font-size: 48px;
+    cursor: pointer;
+}
+.circleImg{
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #0073e6;
+    border-radius: 50%;
+}
+/*Footer Section*/
+.footerSection{
+    margin-top: 5rem;
+    box-shadow: 0 0 4px 0 rgba(0,115,230,0.2);
+
+}
+.socialLink{
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0073e6;
+}
+.socialLink:hover{
+    text-decoration: none;
+    color: #242424;
+}
+.footerLink{
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #242424;
+}
+.footerLink:hover{
+    text-decoration: none;
+    color: #0073e6;
+}
+.copyrightSection{
+    padding: 20px;
+    background-color: #0073e6;
+}
+.copyrightLink{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+}
+.copyrightLink:hover{
+    text-decoration: none;
+    color: #92c8fd;
+}
+/* Start Top Page */
+.topFixedPage{
+    background-image: url("../images/computer-g54f4fcc82_1920.jpg");
+    min-height: 280px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.topPageOverlay{
+    position: absolute;
+    min-height: 280px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+
+}
+.pageContent{
+    margin-top: 9rem;
+}
+.pageTile{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: #ffffff;
+}
+.form-control:focus{
+    border-radius: 2px !important;
+    border-color: #0073e6 !important;
+    box-shadow: 0 0 4px 0 rgba(0,115,230,0.2) !important;
+}
+.CourseSkill li {
+    margin-top: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #242424;
+    list-style: none;
+}
+.projectBtn{
+    color: #ffffff !important;
+    text-decoration: none;
 }

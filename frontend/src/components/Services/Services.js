@@ -3,8 +3,22 @@ import {Col, Container, Row} from "react-bootstrap";
 import webLogo from '../../asset/images/code-svgrepo-com.svg';
 import mobileLogo from '../../asset/images/mobile-svgrepo-com.svg';
 import graphicLogo from '../../asset/images/graphic-design-svgrepo-com.svg';
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
 
 class Services extends Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            myServices:[]
+        }
+    }
+    
+    componentDidMount(){
+        RestClient.getRequest(AppUrl.Service).then(result=>{
+            this.setState({myServices:result})
+        })
+    }
     render() {
         return (
             <Fragment>
